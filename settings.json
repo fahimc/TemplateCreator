@@ -1,0 +1,38 @@
+{
+	"template": [
+		{
+			"thumb": "resource/image/thumb/1.png",
+			"color":
+			[
+			"#2d2530",
+			"#E01B6A",
+			"#1B8EE0",
+			"#E04C1B"
+			]
+		},{
+			"thumb": "resource/image/thumb/2.png",
+			"color":
+			[
+			"#E01B6A",
+			"#1B8EE0",
+			"#E04C1B"
+			]
+		},{
+			"thumb": "resource/image/thumb/1.png",
+			"color":
+			[
+			"#1B8EE0",
+			"#2d2530",
+			"#E01B6A"
+			]
+		},{
+			"thumb": "resource/image/thumb/2.png",
+			"color":
+			[
+			"#E04C1B",
+			"#E01B6A",
+			"#1B8EE0"
+			]
+		}
+	]
+}

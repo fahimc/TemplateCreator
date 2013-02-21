@@ -1,0 +1,31 @@
+var Model=
+{
+	
+	data:null,
+	url:{
+		settings:"settings.json"
+	},
+	currentSection:1,
+	template:
+	{
+		index:0,
+		colorIndex:0,
+	},
+	className:
+	{
+		leftThumb:"leftThumb",
+		color:"color"
+	},
+	id:
+	{
+		thumbHolder:"thumbHolder",
+		rightThumbHolder:"rightThumbHolder",
+		rightColors:"rightColors",
+		rightThumb:"rightThumb"
+	},
+	att:
+	{
+		templateIndex:"template-index",
+		colorIndex:"color-index"
+	}
+}

@@ -1,0 +1,163 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+ v2.0 | 20110126
+ License: none (public domain)
+ */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+html{
+	min-width:100%;
+	min-height: 100%;
+}
+body
+{
+	min-width:100%;
+	min-height: 100%;
+	overflow:auto;
+	background-color: #e4e4e4;
+	font-family: 'Raleway', sans-serif;
+	
+}
+.hide
+{
+	visibility: hidden;
+}
+.wrapper
+{
+	background-color:#FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+	width:1000px;
+	min-height: 100%;
+	padding-bottom: 50px;
+}
+.logo
+{
+	margin-left: 20px;
+}
+.leftContent, .rightContent
+{
+	float: left;
+}
+.leftContent
+{
+	width:400px;
+	margin-right: 40px;
+}
+.leftContent .title
+{
+	font-size: 24px;
+	padding: 20px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.leftContent  #thumbHolder
+{
+	width:400px;
+	height:700px;
+	overflow: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.rightContent .greybox
+{
+	width:360px;
+	background-color: #cccccc;
+	padding: 20px;
+	margin-top: 64px;
+	min-height: 246px;
+}
+.rightContent .greybox .title
+{
+	font-size: 18px;
+	font-weight: bold;
+}
+.rightContent .greybox  .holder
+{
+	margin-top:20px;
+}
+#rightThumbHolder
+{
+	width:200px;
+	height:150px;
+	background-color: #333;
+	overflow:hidden;
+	float: left;
+	cursor: pointer;
+}
+#rightThumb
+{
+	width:200px;
+	margin-top: 5px;
+	display: none;
+	
+}
+#rightColors
+{
+	float: left;
+	margin-left: 20px;
+	cursor: pointer;
+}
+#rightColors .color
+{
+	width:30px;
+	height:30px;
+	border:1px solid #fff;
+	margin-bottom: 10px;
+}
+.button
+{
+	padding: 20px 30px 20px 30px;
+	background-color: #BDD61B;
+	width:auto;
+	display: inline-block;
+	margin-top: 50px;
+	float: right;
+	cursor:pointer;
+	color: #fff;
+}
+.button:hover
+{
+	background-color: #A2D506;
+}
+.leftThumb
+{
+	width:300px;
+	height: 210px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.clearBoth
+{
+	clear: both;
+}
