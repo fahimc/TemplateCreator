@@ -69,7 +69,6 @@ body
 }
 .leftContent
 {
-	width:400px;
 	margin-right: 40px;
 }
 .leftContent .title
@@ -89,7 +88,7 @@ body
 }
 .rightContent .greybox
 {
-	width:360px;
+	width:437px;
 	background-color: #cccccc;
 	padding: 20px;
 	margin-top: 64px;
@@ -133,6 +132,10 @@ body
 	border:1px solid #fff;
 	margin-bottom: 10px;
 }
+#next1
+{
+	float: right;
+}
 .button
 {
 	padding: 20px 30px 20px 30px;
@@ -140,10 +143,11 @@ body
 	width:auto;
 	display: inline-block;
 	margin-top: 50px;
-	float: right;
+	
 	cursor:pointer;
 	color: #fff;
 }
+
 .button:hover
 {
 	background-color: #A2D506;
@@ -160,4 +164,102 @@ body
 .clearBoth
 {
 	clear: both;
+}
+#left2
+{
+	display: none;
+}
+#right2
+{
+	display: none;
+}
+#pageHolder
+{
+	width:150px;
+	height:700px;
+	overflow: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#pageHolder .page
+{
+	padding-left:50px;
+	text-align: left;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+#pageHolder .page:hover
+{
+	color:#A2D506;
+}
+.rightContent #right2  .greybox
+{
+	width:600px;
+}
+.rightContent #right2  .greybox .formItem li
+{
+	margin-bottom: 10px;
+}
+.rightContent #right2  .greybox .formItem .title
+{
+	margin-right: 20px;
+	margin-top: 5px;
+	width:80px;
+}
+.rightContent #right2  .greybox .formItem .textInput
+{
+	width:480px;
+	height:30px;
+}
+.floatLeft
+{
+	float:left;
+}
+.rightContent #right2  .greybox .formItem  .areaInput
+{
+	width:480px;
+	height:200px;
+}
+.nextLi
+{
+	text-align: right;
+}
+.nav
+{
+	width:640px;
+}
+.nav li
+{
+	width:50%;
+}
+#backout
+{
+	min-width:100%;
+	min-height:100%;
+	background-color: #000;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=70);
+	-moz-opacity:0.7;
+	-khtml-opacity: 0.7;
+	opacity: 0.7;
+	position: absolute;
+	top:0;
+	display: none;
+}
+#messageHolder{
+	position:absolute;
+	width:400px;
+	left:50%;
+	margin-left:-200px;
+	top:25%;
+	min-height:50px;
+	background-color: #fff; 
+	text-align: center;
+	display: none;
+}
+#message
+{
+	padding:20px;
+	text-align: center;
+	font-weight: bold;
 }

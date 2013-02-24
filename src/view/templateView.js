@@ -1,5 +1,23 @@
 var TemplateView = {
 	handlers : {},
+	init : function() {
+		var root = this;
+		this.handlers.onNextClick = function(event) {
+			root.onNextClick(event);
+		}
+		var nextId = Model.id.next+Model.currentSection;
+		var next  = document.getElementById(nextId);
+		Utensil.addListener(next, "click", this.handlers.onNextClick);
+		this.setTemplateSection();
+	},
+	setTemplateSection : function() {
+		document.getElementById(Model.id.thumbHolder).innerHTML = "";
+		var template = Model.data.template;
+		for (var a = 0; a < template.length; a++) {
+			this.createLeftTemplate(template[a], a);
+		}
+		this.setRightThumb(0);
+	},
 	createLeftTemplate : function(node, index) {
 		var div = document.createElement("div");
 		div.className = Model.className.leftThumb;
@@ -19,6 +37,7 @@ var TemplateView = {
 	onLeftThumbClick : function(event) {
 		var element = event.srcElement || event.target;
 		this.setRightThumb(element.getAttribute(Model.att.templateIndex));
+		
 	},
 	setRightThumb : function(index) {
 		Model.template.index = index;
@@ -53,9 +72,20 @@ var TemplateView = {
 	},
 	onColorClick : function(event) {
 		var element = event.srcElement || event.target;
-		var index=element.getAttribute(Model.att.colorIndex);
-		Model.template.colorIndex =index;
+		var index = element.getAttribute(Model.att.colorIndex);
+		Model.template.colorIndex = index;
 		var t = Model.data.template[Model.template.index];
 		this.setRightThumbBG(t.color[index]);
+		console.log("onColorClick",index);
+	},
+	onNextClick : function(event) {
+		this.purge();
+		View.changeCurrentSection(Model.currentSection + 1);
+	},
+	purge:function()
+	{
+		var nextId = Model.id.next+Model.currentSection;
+		var next  = document.getElementById(nextId);
+		Utensil.removeListener(next, "click", this.handlers.onNextClick);
 	}
 };

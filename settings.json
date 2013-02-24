@@ -2,36 +2,82 @@
 	"template": [
 		{
 			"thumb": "resource/image/thumb/1.png",
-			"color":
-			[
-			"#2d2530",
-			"#E01B6A",
-			"#1B8EE0",
-			"#E04C1B"
-			]
-		},{
+			"color": ["#2d2530", "#E01B6A", "#1B8EE0", "#E04C1B"]
+		}, {
 			"thumb": "resource/image/thumb/2.png",
-			"color":
-			[
-			"#E01B6A",
-			"#1B8EE0",
-			"#E04C1B"
-			]
-		},{
+			"color": ["#E01B6A", "#1B8EE0", "#E04C1B"]
+		}, {
 			"thumb": "resource/image/thumb/1.png",
-			"color":
-			[
-			"#1B8EE0",
-			"#2d2530",
-			"#E01B6A"
-			]
-		},{
+			"color": ["#1B8EE0", "#2d2530", "#E01B6A"]
+		}, {
 			"thumb": "resource/image/thumb/2.png",
-			"color":
-			[
-			"#E04C1B",
-			"#E01B6A",
-			"#1B8EE0"
+			"color": ["#E04C1B", "#E01B6A", "#1B8EE0"]
+		}
+	],
+	"page": [
+		{
+
+			"type": "home",
+			"name": "Home",
+			"form": [
+				{
+					// types can be text, textarea, file (can have an additional property called filetypes as an array)
+					"type": "text",
+					"id": "mainTitle",
+					"name": "Title:"
+				}, {
+					"type": "textarea",
+					"id": "mainBody",
+					"name": "Body:"
+				}, {
+					"type": "file",
+					"id": "mainImage",
+					"name": "Image"
+				}
+			]
+		}, {
+			"type": "gallery",
+			"name": "Gallery",
+			"form": [
+
+				{
+					"type": "file",
+					"id": "image1",
+					"name": "Image"
+				}, {
+					"type": "file",
+					"id": "image2",
+					"name": "Image"
+				}, {
+					"type": "file",
+					"id": "imag3",
+					"name": "Image"
+				}
+			]
+		}, {
+			"type": "venue",
+			"name": "Venue",
+			"form": [
+				{
+					// types can be text, textarea, file (can have an additional property called filetypes as an array)
+					"type": "text",
+					"id": "mainTitle",
+					"name": "Title:"
+				}, {
+					"type": "textarea",
+					"id": "mainBody",
+					"name": "Body:"
+				}
+			]
+		}, {
+			"type": "contact",
+			"name": "Contact",
+			"form": [
+				{
+					"type": "textarea",
+					"id": "mainBody",
+					"name": "Body:"
+				}
 			]
 		}
 	]
