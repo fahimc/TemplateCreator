@@ -1,5 +1,6 @@
 <?php
 $userid = $_POST['userid'];
+$userdata = $_POST['userdata'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
@@ -21,6 +22,7 @@ $userid = $_POST['userid'];
 		<script type="text/javascript" src="src/main.js"></script>
 		<script>
 			window.USER_ID =<?php echo $userid?$userid:"''"; ?>;
+			window.USER_DATA =<?php echo $userdata?$userdata:"''"; ?>;
 			
 		</script>
 	</head>
