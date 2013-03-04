@@ -1,5 +1,5 @@
 var Model = {
-
+	userId:"",
 	data : null,
 	url : {
 		settings : "settings.json"

@@ -1,4 +1,7 @@
 {
+	"settings": {
+		"uploadURL":"lib/php/saveData.php"
+	},
 	"template": [
 		{
 			"thumb": "resource/image/thumb/1.png",

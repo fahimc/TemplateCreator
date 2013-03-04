@@ -3,6 +3,7 @@ var UploadData = {
 	init : function() {
 		 var fd = new FormData();
 		this.formData = {
+			userId:Model.userId,
 			template : {
 				index : Model.template.index,
 				colorIndex : Model.template.colorIndex
@@ -42,7 +43,7 @@ var UploadData = {
         xhr.addEventListener("load", this.uploadComplete, false);
         // xhr.addEventListener("error", uploadFailed, false);
         // xhr.addEventListener("abort", uploadCanceled, false);
-        xhr.open("POST", "lib/php/saveData.php");
+        xhr.open("POST", Model.data.settings.uploadURL);
         xhr.send(fd);
 		
 		View.showMessage("Saving");

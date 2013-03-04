@@ -12,6 +12,7 @@ var DataLoader=
 	onSettingsLoaded:function(t,x)
 	{
 		Model.data =  eval('(' + t + ')');
+		Model.userId = window.USER_ID;
 		Event.dispatch(DataLoader,DataLoader.event.ON_SETTINGS_COMPLETE);
 	}
 }
