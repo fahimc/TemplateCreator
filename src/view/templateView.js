@@ -76,7 +76,7 @@ var TemplateView = {
 		Model.template.colorIndex = index;
 		var t = Model.data.template[Model.template.index];
 		this.setRightThumbBG(t.color[index]);
-		console.log("onColorClick",index);
+		
 	},
 	onNextClick : function(event) {
 		this.purge();
