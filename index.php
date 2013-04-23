@@ -1,6 +1,7 @@
 <?php
 $userid = $_POST['userid'];
 $userdata = $_POST['userdata'];
+$signupURL = "signup.php";
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
 "http://www.w3.org/TR/html4/strict.dtd">
@@ -23,7 +24,7 @@ $userdata = $_POST['userdata'];
 		<script>
 			window.USER_ID =<?php echo $userid?$userid:"''"; ?>;
 			window.USER_DATA =<?php echo $userdata?$userdata:"''"; ?>;
-			
+			window.SIGNUP_URL ='<?php echo $signupURL; ?>';
 		</script>
 	</head>
 	<body>
@@ -123,6 +124,9 @@ $userdata = $_POST['userdata'];
 						<li class="floatLeft nextLi">
 							<div id="next2" class="button">
 								Save Changes
+							</div>
+							<div id="signup" class="button">
+								Sign up
 							</div>
 						</li>
 						<li class="clearBoth"></li>

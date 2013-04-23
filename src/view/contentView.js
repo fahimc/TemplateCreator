@@ -14,8 +14,14 @@ var ContentView = {
 		}
 		var nextId = Model.id.next + Model.currentSection;
 		var next = document.getElementById(nextId);
+		var signup = document.getElementById(Model.id.signupButton);
 		Utensil.addListener(next, "click", this.handlers.onNextClick);
 		Utensil.addListener(back, "click", this.handlers.onBackClicked);
+		if(USER_ID=='')
+		{
+			Model.data.settings.uploadURL=SIGNUP_URL;
+			Utensil.addListener(signup, "click", this.handlers.onNextClick);
+		}
 	},
 	setLeftContent : function() {
 		document.getElementById(Model.id.pageHolder).innerHTML = "";

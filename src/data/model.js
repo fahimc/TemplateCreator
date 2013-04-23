@@ -32,6 +32,8 @@ var Model = {
 		left : "left",
 		right : "right",
 		next : "next",
+		saveButton : "next2",
+		signupButton : "signup",
 		pageHolder : "pageHolder",
 		formItem : "formItem-",
 		filePrevious : "filePrevious-",

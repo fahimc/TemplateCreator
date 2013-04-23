@@ -3,6 +3,15 @@ var View=
 	init:function()
 	{
 		this.setSection();
+		this.checkDemoMode();
+	},
+	checkDemoMode:function()
+	{
+		if(USER_ID=='')
+		{
+			document.getElementById(Model.id.saveButton).style.display="none";
+			document.getElementById(Model.id.signupButton).style.display="inline-block";
+		}
 	},
 	setSection:function()
 	{
@@ -18,7 +27,7 @@ var View=
 	},
 	changeCurrentSection:function(index)
 	{
-		console.log(index);
+		
 		var leftId = Model.id.left+Model.currentSection;
 		var rightId = Model.id.right+Model.currentSection;
 		document.getElementById(leftId).style.display="none";
