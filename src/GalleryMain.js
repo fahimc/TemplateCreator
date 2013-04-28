@@ -7,10 +7,11 @@
 		} else {
 			window.attachEvent("onload", onLoad);
 		}
-
+	
 	}
 
 	function onLoad() {
+		if(window.SETTINGS_URL)Model.url.settings=window.SETTINGS_URL;
 		Utensil.addListener(window,"resize",onResize);
 		Event.addListener(DataLoader,DataLoader.event.ON_SETTINGS_COMPLETE,onSettingsLoaded);
 		DataLoader.init();
