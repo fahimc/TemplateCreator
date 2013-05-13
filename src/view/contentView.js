@@ -17,9 +17,8 @@ var ContentView = {
 		var signup = document.getElementById(Model.id.signupButton);
 		Utensil.addListener(next, "click", this.handlers.onNextClick);
 		Utensil.addListener(back, "click", this.handlers.onBackClicked);
-		if(USER_ID=='')
-		{
-			Model.data.settings.uploadURL=SIGNUP_URL;
+		if (USER_ID == '') {
+			Model.data.settings.uploadURL = SIGNUP_URL;
 			Utensil.addListener(signup, "click", this.handlers.onNextClick);
 		}
 	},
@@ -27,7 +26,13 @@ var ContentView = {
 		document.getElementById(Model.id.pageHolder).innerHTML = "";
 		var page = Model.data.page;
 		for (var a = 0; a < page.length; a++) {
-			this.createPageButton(page[a], a);
+			if (USER_ID == '') {
+				//check if form index 0 is a title
+				if (page[a].form && page[a].form[0] && page[a].form[0].type == "text")
+					this.createPageButton(page[a], a);
+			} else {
+				this.createPageButton(page[a], a);
+			}
 		}
 	},
 	createPageButton : function(node, index) {
@@ -56,19 +61,20 @@ var ContentView = {
 
 		this.storeForm();
 		UploadData.init();
-		
+
 	},
 	storeForm : function() {
 		var page = Model.data.page[Model.page.index];
 		if (!Model.page.content[page.type])
 			Model.page.content[page.type] = [];
 		var content = {};
-		if(!page.form)return;
+		if (!page.form)
+			return;
 		for (var a = 0; a < page.form.length; a++) {
 			content = {};
 			var item = document.getElementById(Model.id.formItem + a);
 			content.id = page.form[a].id;
-			content.type=page.form[a].type;
+			content.type = page.form[a].type;
 			if (item.getAttribute("type") && item.getAttribute("type") == "file") {
 				content.value = document.getElementById(Model.id.filePrevious + a).innerHTML;
 			} else {
@@ -87,20 +93,27 @@ var ContentView = {
 		ul.className = Model.className.formItem;
 		if (!page.form)
 			return;
-		for (var a = 0; a < page.form.length; a++) {
-			switch(page.form[a].type) {
-				case "text":
-					this.createTextField(page.form[a], ul, a);
-					break;
-				case "textarea":
-					this.createTextArea(page.form[a], ul, a);
-					break;
-				case "file":
-					this.createFileUpload(page.form[a], ul, a);
-					break;
+		if (USER_ID == '') {
+			if (page.form[0].type == "text")
+				this.createTextField(page.form[0], ul, 0);
+		} else {
+			for (var a = 0; a < page.form.length; a++) {
+
+				switch(page.form[a].type) {
+					case "text":
+						this.createTextField(page.form[a], ul, a);
+						break;
+					case "textarea":
+						this.createTextArea(page.form[a], ul, a);
+						break;
+					case "file":
+						this.createFileUpload(page.form[a], ul, a);
+						break;
+				}
+				ul.innerHTML += '<li class="clearBoth"></li>';
 			}
-			ul.innerHTML += '<li class="clearBoth"></li>';
 		}
+
 		ul.innerHTML += '<li class="clearBoth"></li>';
 		li.appendChild(ul);
 		document.getElementById(Model.id.formHolder).appendChild(li);
@@ -118,7 +131,7 @@ var ContentView = {
 		var id = Model.id.formItem + index;
 		var found = this.getItemById(node.id);
 		if (found)
-			found =found.replace(/<br>/ig, '\n');
+			found = found.replace(/<br>/ig, '\n');
 		var li = '<li class="floatLeft"><p class="title">[n]</p></li><li class="floatLeft"><textarea class="areaInput" id="[i]">[v]</textarea></li>'
 		li = li.replace("[i]", id);
 		li = li.replace("[n]", node.name);
